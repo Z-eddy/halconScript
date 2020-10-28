@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hdevelop file_version="1.2" halcon_version="20.05.0.0">
+<procedure name="main">
+<interface/>
+<body>
+<l>imagePath:=''</l>
+<l>test (imagePath, Area)</l>
+</body>
+<docu id="main">
+<parameters/>
+</docu>
+</procedure>
+<procedure name="test">
+<interface>
+<ic>
+<par name="imagePath" base_type="ctrl" dimension="0"/>
+</ic>
+<oc>
+<par name="Area" base_type="ctrl" dimension="0"/>
+</oc>
+</interface>
+<body>
+<l>read_image (Image, imagePath)</l>
+<l>binary_threshold (Image, Region, 'max_separability', 'dark', UsedThreshold)</l>
+<l>area_center (Region, Area, Row, Column)</l>
+<l>return ()</l>
+</body>
+<docu id="test">
+<parameters>
+<parameter id="Area">
+<default_type>real</default_type>
+<sem_type>real</sem_type>
+<type_list>
+<item>real</item>
+</type_list>
+</parameter>
+<parameter id="imagePath">
+<default_type>string</default_type>
+<sem_type>string</sem_type>
+<type_list>
+<item>string</item>
+</type_list>
+</parameter>
+</parameters>
+</docu>
+</procedure>
+</hdevelop>
